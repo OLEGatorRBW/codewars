@@ -13,6 +13,5 @@ function isPerfect(n) {
  }
 
  return sum == n;
- 
+
 }
-console.log(isPerfect(6));
