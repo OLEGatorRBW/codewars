@@ -2,10 +2,11 @@ function getObjectDepth(obj) {
     if (obj === null || typeof obj !== 'object' || Array.isArray(obj)) {
         return 0;
     }
-
-    let maxDepth = 0;
-    for(let key of Object.keys(obj)){
-        maxDepth = Math.max(maxDepth, getObjectDepth(obj[key]) + 1)
+    let maxLength = 0;
+    for(let key in obj){
+        console.log(obj[key]);
+        maxLength = Math.max(getObjectDepth(obj[key]) + 1, maxLength)
     }
-    return maxDepth
+    return maxLength
 }
+console.log(getObjectDepth({a: "b", c: {d: 4}}))
