@@ -1,13 +1,8 @@
 function smartSum(...args){
-    let arrResult = [];
-    
-    args.forEach(elem => {
-       if(Array.isArray(elem)){
-        arrResult.push(smartSum(...elem));
-       } else {
-        arrResult.push(elem);        
-       }       
+    let sum = 0;
+
+    args.forEach((elem) => {
+        return Array.isArray(elem) ? sum += smartSum(...elem) : sum += elem
     })
-    return arrResult
+    return sum
 }
-console.log(smartSum(1,2,[[3,4],5],6))
